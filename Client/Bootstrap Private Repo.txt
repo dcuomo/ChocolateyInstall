@@ -1,7 +1,11 @@
 #Assumes Chocolatey NuSpec was placed on Private Repo
 
-#Example:
+#Example 1: Register Private Repo - Install from Repo
 Register-PackageSource -Name Packager01 -Trusted -ForceBootstrap `
     -Location 'http://packager01.gotham.city/nuget' -ProviderName chocolatey
 
 Get-PackageSource Packager01 | Install-Package Chocolatey
+
+
+#Example 2: Install from Private Repo
+Install-Package -Name Chocolatey -Source Packager01
