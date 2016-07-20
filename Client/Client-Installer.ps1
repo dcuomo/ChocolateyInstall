@@ -1,13 +1,11 @@
-﻿$env:chocolateyUseWindowsCompression = 'true'
+﻿[Environment]::SetEnvironmentVariable('chocolateyUseWindowsCompression','True','Machine')
+[Environment]::SetEnvironmentVariable('chocolateyTempLocation',"$env:systemdrive\temp",'Machine')
 
-#$url = "https://chocolatey.org/api/v2/package/chocolatey/"
-# introduced when there were performance issues - kept around in case we
-# run into them again.
-$url = "http://webapp01.gotham.city/Packages/chocolatey.0.9.10.nupkg"
+$url = 'http://packager01.gotham.city/files/chocolatey.0.9.10.3.nupkg'
 
 $chocolateyVersion = $env:chocolateyVersion
 if (![string]::IsNullOrEmpty($chocolateyVersion)){ Write-Output "Downloading specific version of Chocolatey: $chocolateyVersion" }
-
+write-host "something"
 $chocolateyDownloadUrl = $URL
 if (![string]::IsNullOrEmpty($chocolateyDownloadUrl)){ Write-Output "Downloading Chocolatey from : $chocolateyDownloadUrl" }
 

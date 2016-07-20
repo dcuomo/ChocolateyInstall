@@ -9,3 +9,6 @@ Get-PackageSource Packager01 | Install-Package Chocolatey
 
 #Example 2: Install from Private Repo
 Install-Package -Name Chocolatey -Source Packager01
+
+choco source remove -n=Chocolatey
+choco source add -n=Packager01 -s='http://packager01.gotham.city/nuget'
